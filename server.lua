@@ -15,8 +15,12 @@ local config = {
 
 RegisterServerEvent("pa")
 AddEventHandler("pa", function(param)
-    if param == nil then
+    if (string.len(param) == 0) then
+        if IsPlayerAceAllowed(source, "fw.psit")
         TriggerClientEvent("no-args", source)
+        else
+            TriggerClientEvent("no-perms", source)
+        end
     elseif IsPlayerAceAllowed(source, "fw.psit") then
         print("^1[Active Priority Situation]:^7" .. param)
         TriggerClientEvent("chatMessage", -1, "^1[Active Priority Situation]", {0,0,0}, param)
