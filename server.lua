@@ -16,8 +16,8 @@ local config = {
 RegisterServerEvent("pa")
 AddEventHandler("pa", function(param)
     if (string.len(param) == 0) then
-        if IsPlayerAceAllowed(source, "fw.psit")
-        TriggerClientEvent("no-args", source)
+        if IsPlayerAceAllowed(source, "fw.psit") then
+            TriggerClientEvent("no-args", source)
         else
             TriggerClientEvent("no-perms", source)
         end
